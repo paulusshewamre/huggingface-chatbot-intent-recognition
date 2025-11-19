@@ -1,25 +1,16 @@
-Chatbot with Intent Recognition + Memory
+# Chatbot with Intent Recognition and Memory
 
-A lightweight chatbot that uses sentence embeddings for intent detection, Qdrant for memory, and TinyLlama for fallback responses.
+This project is a simple chatbot that uses sentence embeddings for intent detection, Qdrant for memory storage, and TinyLlama for generating fallback responses.
 
-Features
+## Features
+- Intent recognition using MiniLM
+- Memory storage and retrieval with Qdrant
+- Simple rule-based responses
+- TinyLlama fallback replies
+- Interactive terminal chat loop
 
-Intent recognition using MiniLM embeddings
-
-Memory storage + retrieval with Qdrant
-
-Simple rule-based responses
-
-TinyLlama-generated replies when intent is unclear
-
-Small interactive command-line chat loop
-
-How It Works
-
-Embed user input and compare with example intent embeddings.
-
-If intent is confident → return predefined or rule-based response.
-
-Otherwise → retrieve relevant memories and send to TinyLlama.
-
-Store user messages in Qdrant for future context.
+## How It Works
+1. User input is embedded and compared with stored intent examples.
+2. If an intent is confidently recognized, the bot responds with a predefined or rule-based answer.
+3. If not, relevant memories are retrieved and added to the TinyLlama prompt.
+4. User input is stored in Qdrant as memory for future context.
